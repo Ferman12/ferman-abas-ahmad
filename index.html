@@ -64,6 +64,24 @@
     .contact-email:hover{color:#fff;border-bottom-color:#fff}
     .header-email{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;white-space:nowrap}
     @media(max-width:760px){.header-email{font-size:12px;padding:8px 12px}}
+
+/* Optional, consent-based analytics and privacy controls */
+.faa-footer-links{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.faa-footer-links a,.faa-footer-links button{color:var(--accent);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px;font:inherit}
+.faa-privacy{width:min(840px,calc(100% - 38px));margin:4px auto 34px;color:var(--muted);font-size:13px}
+.faa-privacy summary{cursor:pointer;color:var(--accent);padding:9px 0}
+.faa-privacy h3{color:var(--text);font-size:15px;margin:22px 0 5px}
+.faa-privacy p{margin:6px 0 12px}
+.faa-privacy a,.faa-consent a{color:var(--accent);text-decoration:underline}
+.faa-consent{position:fixed;z-index:10000;bottom:16px;left:16px;right:16px;width:min(620px,calc(100% - 32px));margin:0 auto;padding:20px 22px;background:#192b2e;color:#f5f3eb;border:1px solid rgba(238,198,149,.45);border-radius:17px;box-shadow:0 17px 65px rgba(0,0,0,.62)}
+.faa-consent[hidden]{display:none!important}
+.faa-consent h2{margin:0 0 7px;color:#f5f3eb;font-size:18px;line-height:1.35}
+.faa-consent p{font-size:13px;line-height:1.55;margin:0 0 14px;color:#d6dfda}
+.faa-consent-actions{display:flex;gap:10px;flex-wrap:wrap}
+.faa-consent-actions button{border:1px solid var(--accent);border-radius:10px;padding:11px 17px;min-height:42px;cursor:pointer;font-weight:650}
+.faa-consent-yes{background:var(--accent);color:#0c171b}
+.faa-consent-no{background:transparent;color:#f5f3eb}
+@media(max-width:500px){.faa-consent{padding:15px;bottom:8px;left:8px;right:8px;width:calc(100% - 16px)}.faa-consent-actions button{flex:1}}
 </style>
 </head>
 <body>
@@ -95,8 +113,103 @@
 </div></section>
 <section class="contact" id="kontakt"><div class="container contact-inner"><div><div class="section-kicker">04 · E-MAIL</div><h2>Schreib mir eine E-Mail.</h2><p class="body">Für Fragen, beruflichen Austausch oder neue Ideen freue ich mich über eine Nachricht.</p><a class="contact-email" href="mailto:fermanabasahmad@gmail.com">fermanabasahmad@gmail.com</a></div><div class="contact-action"><a aria-label="E-Mail an fermanabasahmad@gmail.com senden" class="primary" href="mailto:fermanabasahmad@gmail.com?subject=Kontakt%20%C3%BCber%20die%20Website"><span>E-Mail schreiben</span><span aria-hidden="true">↗</span></a></div></div></section>
 </main>
-<footer><div class="container"><span>© <span id="year">2026</span> Ferman Abas Ahmad</span><span>Persönliche Website · Ostfriesland, Deutschland</span></div></footer>
+<footer><div class="container"><span>© <span id="year">2026</span> Ferman Abas Ahmad</span><span class="faa-footer-links"><span>Persönliche Website · Ostfriesland, Deutschland</span><a href="#datenschutz" id="faa-privacy-link">Datenschutz</a><button type="button" id="faa-cookie-settings">Cookie-Einstellungen</button></span></div></footer>
+<details id="datenschutz" class="faa-privacy">
+<summary>Datenschutzhinweise</summary>
+<h3>Verantwortliche Person</h3>
+<p>Ferman Abas Ahmad · Kontakt: <a href="mailto:fermanabasahmad@gmail.com">fermanabasahmad@gmail.com</a>.</p>
+<h3>Technische Bereitstellung</h3>
+<p>Diese Website wird über Render bereitgestellt. Bei Anfragen können technisch erforderliche Informationen wie IP-Adresse, Zeitpunkt und aufgerufene Seite zum Betrieb und zur Sicherheit verarbeitet werden (Art. 6 Abs. 1 lit. f DSGVO).</p>
+<h3>Freiwillige Reichweitenmessung mit Google Analytics 4</h3>
+<p>Nur nach Ihrer aktiven Einwilligung nutzen wir Google Analytics 4 (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Dabei können Seitenaufrufe, ungefähre geografische Herkunft, Gerätedaten, Nutzungsdauer und Klicks auf Kontakt- oder externe Links erfasst werden. Google Analytics kann Cookies bzw. ähnliche Identifikatoren verwenden. Eine Übermittlung von Daten in die USA ist möglich. Die Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG). Ohne Ihre Einwilligung laden wir kein Google-Analytics-Skript.</p>
+<p>Mehr zur Verarbeitung: <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von Google</a> und <a href="https://support.google.com/analytics/answer/6004245?hl=de" target="_blank" rel="noopener noreferrer">Google Analytics Datenschutz</a>.</p>
+<h3>Einwilligung verwalten und widerrufen</h3>
+<p>Ihre Entscheidung wird lokal im Browser gespeichert. Über „Cookie-Einstellungen“ im Seitenfuß können Sie Ihre Wahl jederzeit ändern oder eine Einwilligung für die Zukunft widerrufen. Der Widerruf macht vorherige Verarbeitung nicht automatisch rückgängig.</p>
+<h3>Kontakt und externe Links</h3>
+<p>Wenn Sie uns eine E-Mail senden, werden Ihre Angaben zur Bearbeitung verwendet. Bei Aufruf externer Seiten gelten die jeweiligen Datenschutzhinweise der Drittanbieter.</p>
+<h3>Ihre Rechte</h3>
+<p>Im Rahmen der DSGVO haben Sie insbesondere Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerruf und Beschwerde bei einer Datenschutzaufsichtsbehörde. Für Anfragen nutzen Sie bitte die oben genannte E-Mail-Adresse.</p>
+</details>
 </div>
+<aside id="faa-consent-banner" class="faa-consent" aria-labelledby="faa-consent-title" hidden>
+<h2 id="faa-consent-title">Anonyme Besuchsstatistik erlauben?</h2>
+<p>Wir möchten mit Google Analytics erfassen, wie viele Personen unsere Website besuchen und welche Inhalte sie nutzen. Dazu können Daten an Google übertragen und Cookies gesetzt werden. Das passiert <strong>nur mit Ihrer Zustimmung</strong>. Die Website funktioniert auch ohne Analyse. <a href="#datenschutz" id="faa-consent-more">Datenschutzhinweise</a>.</p>
+<div class="faa-consent-actions"><button class="faa-consent-no" type="button" id="faa-consent-reject">Ablehnen</button><button class="faa-consent-yes" type="button" id="faa-consent-accept">Analytics erlauben</button></div>
+</aside>
+<script>
+(function(){
+  "use strict";
+  var id = "G-48HQKF2210";
+  var key = "faa-ga4-consent-v1";
+  var banner = document.getElementById("faa-consent-banner");
+  function readChoice(){try{return window.localStorage.getItem(key)}catch(e){return null}}
+  function storeChoice(value){try{window.localStorage.setItem(key,value)}catch(e){}}
+  function loadAnalytics(){
+    if(window.__faaGA4Loaded) return;
+    window.__faaGA4Loaded = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function(){window.dataLayer.push(arguments)};
+    window.gtag("consent","default",{
+      analytics_storage:"denied",ad_storage:"denied",
+      ad_user_data:"denied",ad_personalization:"denied"
+    });
+    window.gtag("consent","update",{analytics_storage:"granted"});
+    window.gtag("js",new Date());
+    window.gtag("config",id,{
+      send_page_view:true,
+      allow_google_signals:false,
+      allow_ad_personalization_signals:false
+    });
+    var tag=document.createElement("script");
+    tag.async=true;
+    tag.src="https://www.googletagmanager.com/gtag/js?id="+encodeURIComponent(id);
+    document.head.appendChild(tag);
+  }
+  function eraseAnalyticsCookies(){
+    var names=document.cookie.split(";");
+    var apex=window.location.hostname.replace(/^www\./,"");
+    names.forEach(function(item){
+      var name=item.trim().split("=")[0];
+      if(!/^_ga($|_)/.test(name))return;
+      document.cookie=name+"=; Max-Age=0; path=/; SameSite=Lax";
+      document.cookie=name+"=; Max-Age=0; path=/; domain=."+apex+"; SameSite=Lax";
+    });
+  }
+  function choose(value){
+    var wasAccepted=readChoice()==="accepted";
+    storeChoice(value);
+    banner.hidden=true;
+    if(value==="accepted")loadAnalytics();
+    else {
+      eraseAnalyticsCookies();
+      if(wasAccepted && window.__faaGA4Loaded)window.location.reload();
+    }
+  }
+  if(readChoice()==="accepted")loadAnalytics();
+  else if(readChoice()!=="rejected")banner.hidden=false;
+  document.getElementById("faa-consent-accept").addEventListener("click",function(){choose("accepted")});
+  document.getElementById("faa-consent-reject").addEventListener("click",function(){choose("rejected")});
+  document.getElementById("faa-cookie-settings").addEventListener("click",function(){
+    banner.hidden=false;document.getElementById("faa-consent-accept").focus();
+  });
+  function showPrivacy(){
+    var area=document.getElementById("datenschutz");
+    area.open=true;
+  }
+  document.getElementById("faa-privacy-link").addEventListener("click",showPrivacy);
+  document.getElementById("faa-consent-more").addEventListener("click",function(){
+    showPrivacy();banner.hidden=true;
+  });
+  document.addEventListener("click",function(event){
+    if(!window.__faaGA4Loaded)return;
+    var link=event.target.closest && event.target.closest("a[href]");
+    if(!link)return;
+    var href=link.getAttribute("href")||"";
+    if(href.indexOf("mailto:")===0)window.gtag("event","contact_click",{contact_method:"email"});
+    else if(href.indexOf("linkedin.com")!==-1)window.gtag("event","profile_click",{profile:"linkedin"});
+  });
+})();
+</script>
 <script>document.getElementById('year').textContent = String(new Date().getFullYear());</script>
 </body>
 </html>
