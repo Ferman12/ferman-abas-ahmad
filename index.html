@@ -4,6 +4,17 @@
 <html lang="de">
 <head>
 <meta charset="utf-8"/>
+<script>
+  // Send visitors using the old Render hostname to the permanent .de address.
+  if (window.location.hostname === "ferman-abas-ahmad.onrender.com") {
+    window.location.replace(
+      "https://ferman-abas-ahmad.de" +
+      window.location.pathname +
+      window.location.search +
+      window.location.hash
+    );
+  }
+</script>
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <meta content="#0c171b" name="theme-color"/>
 <meta content="index, follow, max-image-preview:large" name="robots"/>
