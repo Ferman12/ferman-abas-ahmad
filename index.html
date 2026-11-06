@@ -113,7 +113,7 @@
 </div></section>
 <section class="contact" id="kontakt"><div class="container contact-inner"><div><div class="section-kicker">04 · E-MAIL</div><h2>Schreib mir eine E-Mail.</h2><p class="body">Für Fragen, beruflichen Austausch oder neue Ideen freue ich mich über eine Nachricht.</p><a class="contact-email" href="mailto:fermanabasahmad@gmail.com">fermanabasahmad@gmail.com</a></div><div class="contact-action"><a aria-label="E-Mail an fermanabasahmad@gmail.com senden" class="primary" href="mailto:fermanabasahmad@gmail.com?subject=Kontakt%20%C3%BCber%20die%20Website"><span>E-Mail schreiben</span><span aria-hidden="true">↗</span></a></div></div></section>
 </main>
-<footer><div class="container"><span>© <span id="year">2026</span> Ferman Abas Ahmad</span><span class="faa-footer-links"><span>Persönliche Website · Ostfriesland, Deutschland</span><a href="#datenschutz" id="faa-privacy-link">Datenschutz</a><button type="button" id="faa-cookie-settings">Cookie-Einstellungen</button></span></div></footer>
+<footer><div class="container"><span>© <span id="year">2026</span> Ferman Abas Ahmad</span><span class="faa-footer-links"><span>Persönliche Website · Ostfriesland, Deutschland</span><a href="#datenschutz" id="faa-privacy-link">Datenschutz</a><button type="button" id="faa-cookie-settings">Cookie-Einstellungen</button><span title="Website-Version">Stand: 07.11.2026</span></span></div></footer>
 <details id="datenschutz" class="faa-privacy">
 <summary>Datenschutzhinweise</summary>
 <h3>Verantwortliche Person</h3>
@@ -131,7 +131,7 @@
 <p>Im Rahmen der DSGVO haben Sie insbesondere Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerruf und Beschwerde bei einer Datenschutzaufsichtsbehörde. Für Anfragen nutzen Sie bitte die oben genannte E-Mail-Adresse.</p>
 </details>
 </div>
-<aside id="faa-consent-banner" class="faa-consent" aria-labelledby="faa-consent-title" hidden>
+<aside id="faa-consent-banner" class="faa-consent" aria-labelledby="faa-consent-title">
 <h2 id="faa-consent-title">Anonyme Besuchsstatistik erlauben?</h2>
 <p>Wir möchten mit Google Analytics erfassen, wie viele Personen unsere Website besuchen und welche Inhalte sie nutzen. Dazu können Daten an Google übertragen und Cookies gesetzt werden. Das passiert <strong>nur mit Ihrer Zustimmung</strong>. Die Website funktioniert auch ohne Analyse. <a href="#datenschutz" id="faa-consent-more">Datenschutzhinweise</a>.</p>
 <div class="faa-consent-actions"><button class="faa-consent-no" type="button" id="faa-consent-reject">Ablehnen</button><button class="faa-consent-yes" type="button" id="faa-consent-accept">Analytics erlauben</button></div>
@@ -142,6 +142,7 @@
   var id = "G-48HQKF2210";
   var key = "faa-ga4-consent-v1";
   var banner = document.getElementById("faa-consent-banner");
+  var forceSettings = new URLSearchParams(window.location.search).has("cookies");
   function readChoice(){try{return window.localStorage.getItem(key)}catch(e){return null}}
   function storeChoice(value){try{window.localStorage.setItem(key,value)}catch(e){}}
   function loadAnalytics(){
@@ -185,8 +186,9 @@
       if(wasAccepted && window.__faaGA4Loaded)window.location.reload();
     }
   }
-  if(readChoice()==="accepted")loadAnalytics();
-  else if(readChoice()!=="rejected")banner.hidden=false;
+  var initialChoice=readChoice();
+  if(initialChoice==="accepted")loadAnalytics();
+  banner.hidden = !forceSettings && (initialChoice==="accepted" || initialChoice==="rejected");
   document.getElementById("faa-consent-accept").addEventListener("click",function(){choose("accepted")});
   document.getElementById("faa-consent-reject").addEventListener("click",function(){choose("rejected")});
   document.getElementById("faa-cookie-settings").addEventListener("click",function(){
